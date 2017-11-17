@@ -24,23 +24,18 @@ export default class Store {
         //React state, but represents the current state of the store.
         let _getState = () => _state
 
-        //STEP 4: Dispatch is given the Increment Action
         //Dispatcher that calls reducer on action
         let _dispatch = (action) => {
             console.log(`Dispatch for ${action} received`)
-            //STEP 5: Run the reducers with the Increment Action
 
             _reducers.forEach((reducer) => {
-                //STEP 6: Reducer that handles Increment Action will return a newState
                 let newState = reducer(_state, action) //Update the State
                 if (!isEquivalent(newState, _state)) {
-                    //STEP 10: update the state of the store with the newState
                     console.log("store updating state")
                     _state = newState
                 }
             })
 
-            //STEP 11: Notify each listener that the state has changed
             console.log("Store notifying listeners that state is changed")
             _listeners.forEach((listener) => {
                 //Invoke the callback provided by the listener

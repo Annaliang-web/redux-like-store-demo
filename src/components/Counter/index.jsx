@@ -14,7 +14,6 @@ export default class Counter extends Component {
         count : _store.getState().count,
       }
   
-      //STEP 3: Call the store's dispatch with the Increment Action
       //Dispatch actions to the store
       this.dispatch = (action) => {
         console.log(`Dispatching ${action}`)
@@ -34,7 +33,6 @@ export default class Counter extends Component {
       }, 'count')
     }
     
-    //STEP 2: After clicking the "+" button, our dispatch is called
     //Method for incrementing counter
     increment = () => {
       this.dispatch(Store.ACTIONS.Increment)
@@ -51,7 +49,6 @@ export default class Counter extends Component {
       }  
       return (
         <div>
-          {/* STEP 13: Counter displays as new value */}
           {console.log("Counter re-rendered with new state from store")}
           <h1>Counter: {this.state.count}</h1> 
           <RaisedButton onClick={this.decrement} label="-" style={style} secondary={true} />

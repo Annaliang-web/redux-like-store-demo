@@ -4,10 +4,8 @@ import Store from '../store/store';
 export const counter = (state = { count: 0 }, action) => {
     console.log(`Running reducer 'counter' with action ${action}`)
     
-    //STEP 7: counter reducer runs with action Increment
     let partialState = {}
     
-    //STEP 8: create a state related to the Increment Action
     switch (action) {
       case Store.ACTIONS.Increment:
         partialState = { count: state.count + 1 }

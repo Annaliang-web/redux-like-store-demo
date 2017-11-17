@@ -11,10 +11,9 @@ const myStore = Store.createStore(counter).addReducer(random);
 
 //Can't access state
 console.log("Error - trying to directly access state:", myStore._state)
-//can access the state
+//Can access the state
 console.log("Correct - accessing state via getState():", myStore.getState())
 
-// Rendor Components on the DOM
 ReactDOM.render(<MuiThemeProvider>
                   <App store={myStore} />
                 </MuiThemeProvider>, 
